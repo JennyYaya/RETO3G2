@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 @Table(name ="quadbike")
 public class Quadbike {
@@ -28,6 +29,7 @@ public class Quadbike {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
     @JsonIgnoreProperties({"quadbike", "messages"})
     public List<Reservation> reservations;
+
 
     public Integer getId() {
         return id;
