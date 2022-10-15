@@ -33,4 +33,17 @@ public class QuadbikeController {
         return quadbikeService.save(quadbike);
     }
 
-}
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Quadbike update(@RequestBody Quadbike quadbike) {
+        return quadbikeService.update(quadbike);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")int quadbikeId){
+        return quadbikeService.delete(quadbikeId);
+    }
+
+
+    }
