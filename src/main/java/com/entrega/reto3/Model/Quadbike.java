@@ -21,14 +21,13 @@ public class Quadbike {
     @JsonIgnoreProperties("quadbikes")
     private Category category;
 
-    @OneToMany (cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
-    @JsonIgnoreProperties ({"quadbike", "messages"})
-    public List<Reservation> reservations;
-
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
     @JsonIgnoreProperties({"quadbike", "client"})
     public List<Message> messages;
 
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
+    @JsonIgnoreProperties({"quadbike", "messages"})
+    public List<Reservation> reservations;
 
     public Integer getId() {
         return id;
@@ -78,19 +77,19 @@ public class Quadbike {
         this.category = category;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
     public List<Message> getMessages() {
         return messages;
     }
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
