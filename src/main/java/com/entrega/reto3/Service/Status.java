@@ -25,5 +25,4 @@ public class Status {
     public void setCancelled(int cancelled) {
         this.cancelled = cancelled;
     }
-
 }
